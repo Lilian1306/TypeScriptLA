@@ -2,7 +2,7 @@ import { db } from "../data/db"
 import { useEffect, useMemo, useState } from "react"
 
 
-export default function useCart() {
+export function useCart() {
 
      const initialCart = () => {
         const localStorageCart = localStorage.getItem("cart")

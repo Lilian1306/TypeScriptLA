@@ -36,12 +36,12 @@ export function useCart() {
       }
     
       // Funcion para remover guitarras del carrito. 
-      function removeFromCart (id)  {
+      function removeFromCart (id : Guitar['id'])  {
         setCart(prevCart => prevCart.filter(guitar => guitar.id !== id))
       }
     
       // Funcion para incrementar el producto en el carrito
-      function increaseQuantity (id){
+      function increaseQuantity (id: Guitar['id']){
         const updatedCart = cart.map(item => {
           if(item.id === id && item.quantity < MAX_ITEMS ) {
             return {
@@ -55,7 +55,7 @@ export function useCart() {
       }
     
       // Funcion para decrementar el producto en el carrito 
-      function decreaseQuantity (id) {
+      function decreaseQuantity (id : Guitar['id']) {
         const updatedCart = cart.map(item => {
           if(item.id === id && item.quantity > MIN_ITEMS){
             return {
@@ -69,7 +69,7 @@ export function useCart() {
       }
     
       // FUncion para limpiar el carrito 
-      function clearCart(e) {
+      function clearCart() {
         setCart([])
       }
 
